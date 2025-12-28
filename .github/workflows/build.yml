@@ -25,10 +25,10 @@ jobs:
         run: bun install
 
       - name: Build web app
-        run: bun turbo run build --filter=web
+        run: bun turbo run build --filter=apps/web
 
       - name: Build server app
-        run: bun turbo run build --filter=server
+        run: bun turbo run build --filter=apps/server
 
       - name: Upload frontend (apps/web/dist)
         uses: actions/upload-artifact@v4
