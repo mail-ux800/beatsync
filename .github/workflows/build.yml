@@ -23,9 +23,12 @@ jobs:
 
       - name: Install dependencies (monorepo)
         run: bun install
+              - name: Build web app
+        run: bun run build --filter=web
 
-      - name: Build all apps with Turborepo
-        run: bun run build
+      - name: Build server app
+        run: bun run build --filter=server
+
 
       - name: Upload frontend (apps/web/dist)
         uses: actions/upload-artifact@v4
